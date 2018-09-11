@@ -1,0 +1,18 @@
+<?php
+    header("Content-type: application/vnd.ms-excel");
+header("Content-Disposition: attachment; filename=myFile.xls");
+header("Pragma: no-cache");
+header("Expires: 0");
+?>
+<table>
+<tbody>
+{exp:channel:entries channel='myChannel' limit='500' disable="categories|member_data|pagination|trackbacks" status="not Closed"}
+    <tr>
+            <td>{first-field}</td>
+            <td>{second-field}</td>
+            <td>{third-field}</td>
+            <td>{etc}</td>
+    </tr>
+{/exp:channel:entries}
+</tbody>
+</table>
